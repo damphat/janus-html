@@ -435,6 +435,9 @@ Janus.randomString = function(len) {
 };
 
 function Janus(gatewayCallbacks) {
+	gatewayCallbacks.server = window.server;
+	gatewayCallbacks.iceServers = window.iceServers;
+	
 	gatewayCallbacks = gatewayCallbacks || {};
 	gatewayCallbacks.success = (typeof gatewayCallbacks.success == "function") ? gatewayCallbacks.success : Janus.noop;
 	gatewayCallbacks.error = (typeof gatewayCallbacks.error == "function") ? gatewayCallbacks.error : Janus.noop;
@@ -3669,5 +3672,16 @@ function Janus(gatewayCallbacks) {
 }
 
 window.server = [
-	"wss://janus.conf.meetecho.com/ws"
+	"wss://janus.damphat.com/ws"
 ];
+
+// window.iceServers = [
+// 	{
+// 		urls: "turn:178.128.112.202:19302?transport=udp", 
+// 		username: "1610509025:flutter-webrtc",
+// 		credential: "3V05N+30RoxJAgbhFNW9azJQyBA"
+// 	}, 
+// 	// {
+// 	// 	url:'stun:stun.l.google.com:19302'
+// 	// }
+// ];

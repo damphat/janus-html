@@ -47,7 +47,7 @@ var janus = null;
 var sfutest = null;
 var opaqueId = "videoroomtest-"+Janus.randomString(12);
 
-var myroom = 4444;	// Demo room
+var myroom = 1234;	// Demo room
 if(getQueryStringValue("room") !== "")
 	myroom = parseInt(getQueryStringValue("room"));
 var myusername = null;
@@ -78,16 +78,6 @@ $(document).ready(function() {
 			janus = new Janus(
 				{
 					server: server,
-					iceServers: [
-						{
-							urls: "turn:178.128.112.202:19302?transport=udp", 
-							username: "1610509025:flutter-webrtc",
-							credential: "003V05N+30RoxJAgbhFNW9azJQyBA"
-						}, 
-						// {
-						// 	url:'stun:stun.l.google.com:19302'
-						// }
-					],
 					success: function() {
 						// Attach to VideoRoom plugin
 						janus.attach(

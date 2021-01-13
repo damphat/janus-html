@@ -74,17 +74,7 @@ $(document).ready(function() {
 			// Create session
 			janus = new Janus(
 				{
-					server: server,					
-					iceServers: [
-						{
-							urls: "turn:178.128.112.202:19302?transport=udp", 
-							username: "1610509025:flutter-webrtc",
-							credential: "003V05N+30RoxJAgbhFNW9azJQyBA"
-						}, 
-						// {
-						// 	url:'stun:stun.l.google.com:19302'
-						// }
-					],
+					server: server,
 					// No "iceServers" is provided, meaning janus.js will use a default STUN server
 					// Here are some examples of how an iceServers field may look like to support TURN
 					// 		iceServers: [{urls: "turn:yourturnserver.com:3478", username: "janususer", credential: "januspwd"}],
